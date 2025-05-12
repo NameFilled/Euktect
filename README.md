@@ -31,7 +31,7 @@ Euktect is a deep learning model built upon the Hyena-DNA architecture, designed
    pip install -r requirements.txt
    ```
 
-> **Note:** If you encounter issues with environment compatibility, refer to the [Hyena-DNA repository](https://github.com/facebookresearch/hyena-dna) for detailed setup instructions, or contact [bufifhei@foxmail.com](mailto:bufifhei@foxmail.com).
+> **Note:** If you encounter issues with environment compatibility, refer to the [Hyena-DNA repository](https://github.com/HazyResearch/hyena-dna) for detailed setup instructions, or contact [bufifhei@foxmail.com](mailto:bufifhei@foxmail.com).
 
 ------
 
@@ -124,7 +124,7 @@ To refine eukaryotic metagenome-assembled genomes (MAGs), combine Euktect’s su
    - bwa
    - samtools
 
-   Download the EukCC database as described in the [EukCC repository](https://github.com/Finn-Lab/EukCC).
+   Download the EukCC database as described in the [EukCC repository](https://github.com/EBI-Metagenomics/EukCC).
 
 3. **Run Refinement**:
 
