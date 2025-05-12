@@ -37,7 +37,7 @@ Euktect is a deep learning model built upon the Hyena-DNA architecture, designed
 
 ## Model Usage
 
-Before running predictions, download the model checkpoint (`.ckpt`) and configuration file (`.cfg`) from the [Releases](https://github.com/NameFilled/Euktect/releases) page.
+Before running predictions, download the model checkpoint (`.ckpt`) and configuration file (`.yaml`) from the [Releases](https://github.com/NameFilled/Euktect/releases) page.
 
 ```bash
 python predict.py \
