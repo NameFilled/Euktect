@@ -135,6 +135,9 @@ To refine eukaryotic metagenome-assembled genomes (MAGs), combine Euktect’s su
      --workdir <path_to_workdir> \
      --eukcc_db <path_to_eukcc_db>
    ```
+    - **Optional**: `--input_MAG_quality` to set the initial MAG quality level (default: LQ).
+   If set to LQ, the refinement will sequentially search for HQ and MQ bins;
+   if set to MQ, it will only search for HQ bins.
 
 4. **Review Output in `workdir/`**:
 
