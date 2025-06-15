@@ -121,7 +121,7 @@ class ModelLoader:
                     seqs.append(seq_r[start:end])
                 # Add remaining sequence
                 if seq_r[num_subseq * self.max_seq_len:]:
-                    seqs.append(seq_r[-self.max_seq_len:])
+                    seqs.append(seq_r[len(seq_r) - self.max_seq_len:])
             else:
                 # Take first max_chunk chunks
                 for x in range(1, self.max_chunk + 1):
