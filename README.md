@@ -152,3 +152,8 @@ To refine eukaryotic metagenome-assembled genomes (MAGs), combine Euktect’s su
 
 Refined MAG sequences will be available in the `workdir/refined_result/` directory.
 
+## Citation
+
+If you use Euktect in your research, please cite the following paper:
+
+> Peng Y, Ji B, Wang Y, et al. Euktect: Enhanced Eukaryotic Sequence Detection and Classification in Metagenomes via the DNA Language Model[J]. bioRxiv, 2025: 2025.06. 19.660294.
