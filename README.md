@@ -92,6 +92,8 @@ Each level uses a binary classifier with the following label encodings:
 - **Family**: Debaryomycetaceae (0), Other Saccharomycetales (1)
 - **Genus**: Candida (0), Other Debaryomycetaceae (1)
 
+>**Note:** The model ckpt&cfg and datasets used in article can be accessed in  https://doi.org/10.6084/m9.figshare.29345837
+
 ------
 
 ## MAG Refinement Workflow
