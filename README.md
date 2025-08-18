@@ -19,10 +19,16 @@ Euktect is a deep learning model built upon the Hyena-DNA architecture, designed
    conda activate Euktect
    ```
 
-3. **Install PyTorch and CUDA** (ensure your CUDA driver is >= 11.7):
-
+3. **Install PyTorch and CUDA** (ensure your CUDA driver is >= 11.7，**Recommended**: Use mamba or miniconda for faster installation:):
+   
    ```bash
-   conda install pytorch torchvision torchaudio pytorch-cuda -c pytorch -c nvidia
+   # Install mamba (fastest option)
+   conda install mamba -n base -c conda-forge
+   mamba install pytorch torchvision torchaudio pytorch-cuda -c pytorch -c nvidia
+
+   # OR download and install miniconda directly
+   # Visit: https://docs.conda.io/en/latest/miniconda.html
+   # Then: conda install pytorch torchvision torchaudio pytorch-cuda -c pytorch -c nvidia
    ```
 
 4. **Install Python Dependencies**:
@@ -30,7 +36,17 @@ Euktect is a deep learning model built upon the Hyena-DNA architecture, designed
    ```bash
    pip install -r requirements.txt
    ```
+   
+5. **Install Flash Attention**:
 
+   ```bash
+   cd hyena-dna
+   git submodule update --init
+   cd flash-attention
+   git submodule update --init
+   pip install -e . --no-build-isolation
+   ```
+   
 > **Note:** If you encounter issues with environment compatibility, refer to the [Hyena-DNA repository](https://github.com/HazyResearch/hyena-dna) for detailed setup instructions, or contact [bufifhei@foxmail.com](mailto:bufifhei@foxmail.com).
 
 ------
