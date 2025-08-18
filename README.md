@@ -19,7 +19,7 @@ Euktect is a deep learning model built upon the Hyena-DNA architecture, designed
    conda activate Euktect
    ```
 
-3. **Install PyTorch and CUDA** (ensure your CUDA driver is >= 11.7，**Recommended**: Use mamba or miniconda for faster installation:):
+3. **Install PyTorch and CUDA** (ensure your CUDA driver is >= 11.7，**Recommended**: Use mamba or miniconda for faster installation):
    
    ```bash
    # Install mamba (fastest option)
