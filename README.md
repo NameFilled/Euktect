@@ -21,16 +21,40 @@ Euktect is a deep learning model built upon the Hyena-DNA architecture, designed
 
 3. **Install PyTorch and CUDA** (ensure your CUDA driver is >= 11.7，**Recommended**: Use mamba or miniconda for faster installation):
    
+   **Option 1 — Using mamba** 
+   
    ```bash
-   # Install mamba (fastest option)
    conda install mamba -n base -c conda-forge
    mamba install pytorch torchvision torchaudio pytorch-cuda -c pytorch -c nvidia
-
-   # OR download and install miniconda directly
-   # Visit: https://docs.conda.io/en/latest/miniconda.html
-   # Then: conda install pytorch torchvision torchaudio pytorch-cuda -c pytorch -c nvidia
    ```
-
+   
+   **Option 2 — Using conda**
+   
+   ```bash
+   conda install pytorch torchvision torchaudio pytorch-cuda -c pytorch -c nvidia
+   ```
+   
+   **Option 3 — Using pip (based on your CUDA version)**
+   
+   First, check your CUDA version:
+   
+   ```bash
+   nvidia-smi
+   ```
+   
+   Then install the corresponding PyTorch build (examples below):
+   
+   ```bash
+   # CUDA 12.8
+   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+   
+   # CUDA 11.8
+   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+   
+   ```
+   
+   > ⚠️ Make sure your system CUDA driver version is **equal to or newer than** the one you select above.
+   
 4. **Install Python Dependencies**:
 
    ```bash
@@ -47,7 +71,7 @@ Euktect is a deep learning model built upon the Hyena-DNA architecture, designed
    pip install -e . --no-build-isolation
    ```
    
-> **Note:** If you encounter issues with environment compatibility, refer to the [Hyena-DNA repository](https://github.com/HazyResearch/hyena-dna) for detailed setup instructions, or contact [bufifhei@foxmail.com](mailto:bufifhei@foxmail.com).
+> **Note:** If you encounter issues with environment compatibility, you can also refer to the [Hyena-DNA repository](https://github.com/HazyResearch/hyena-dna) for setup instructions.
 
 ------
 

@@ -61,8 +61,7 @@ class ModelLoader:
         # Initialize DNA character tokenizer
         self.tokenizer = CharacterTokenizer(
             characters=['A', 'C', 'G', 'T', 'N'],  # DNA bases + unknown
-            model_max_length=self.max_seq_len + 2,  # Add buffer for tokens
-            add_special_tokens=False  # No special tokens for DNA sequences
+            model_max_length=self.max_seq_len + 2  # Add buffer for tokens
         )
 
     def load_model(self):
