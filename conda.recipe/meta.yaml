@@ -1,0 +1,57 @@
+{% set version = "1.0.0" %}
+
+package:
+  name: euktect
+  version: {{ version }}
+
+source:
+  path: ..
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  noarch: python
+
+requirements:
+  host:
+    - python >=3.8
+    - pip
+    - setuptools
+
+  run:
+    - python >=3.8
+    - pytorch >=1.13,<2.1  # [not win]
+    - pytorch-cpu >=1.13,<2.1  # [win]
+    - cpuonly
+    - numpy
+    - scipy
+    - pandas
+    - scikit-learn
+    - matplotlib
+    - tqdm
+    - rich
+    - einops
+    - opt_einsum
+    - timm
+    - pyfaidx
+    - polars
+    - loguru
+    - pyyaml
+
+test:
+  imports:
+    - euktect
+
+about:
+  home: https://github.com/NameFilled/Euktect
+  license: MIT
+  summary: Eukaryotic MAG assessment using HyenaDNA (CPU-only)
+  description: |
+    Euktect uses HyenaDNA for eukaryotic MAG quality assessment.
+    This is a CPU-only build that does not require CUDA or GPU hardware.
+    pytorch-lightning, hydra-core, omegaconf, and transformers are installed
+    via pip during the build script.
+
+extra:
+  recipe-maintainers:
+    - euktect-team
