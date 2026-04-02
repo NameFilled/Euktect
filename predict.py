@@ -19,8 +19,6 @@ import numpy as np
 from pyfaidx import Fasta  # For efficient FASTA file parsing
 from tqdm import tqdm  # For progress bar visualization
 
-# Add hyena-dna module to Python path
-sys.path.append(os.path.abspath("hyena-dna"))
 from src.models.sequence.long_conv_lm import DNAEmbeddingModel
 from src.tasks.decoders import SequenceDecoder
 from src.dataloaders.datasets.hg38_char_tokenizer import CharacterTokenizer
