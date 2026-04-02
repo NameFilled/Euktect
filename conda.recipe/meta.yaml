@@ -5,7 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  path: ..
+  url: https://github.com/NameFilled/Euktect/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 56306f285b2291d4a5ad66c56d75c42e3795154232d75c24511364222a87ee13
 
 build:
   number: 0
