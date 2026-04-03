@@ -1,0 +1,16 @@
+# Claude-specific
+CLAUDE.md
+docs/plans/
+
+# Python build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment
+.env
+.venv/
