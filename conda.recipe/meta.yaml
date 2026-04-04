@@ -24,7 +24,7 @@ requirements:
   run:
     - python >=3.8
     # CPU-only PyTorch (build string selector matches cpu_mkl_*, cpu_openblas_*, etc.)
-    - pytorch * cpu_*
+    - pytorch * cpu_*  # F.gelu 'approximate' kwarg removed in long_conv_lm.py for PyTorch<1.12 compat
     # Deep learning utilities
     - pytorch-lightning >=1.8,<1.9
     - transformers ==4.26.1
@@ -35,7 +35,7 @@ requirements:
     - setuptools <80  # pkg_resources removed in setuptools >=80
     - einops
     - opt_einsum
-    - timm
+    - timm  # >=0.9 OK: mode='row' removed from block.py; DropPath default is row-wise
     # Data science
     - numpy
     - scipy
@@ -60,6 +60,8 @@ test:
   commands:
     - euktect-predict --help
     - euktect-refine --help
+  # Integration test (requires external ckpt/fasta, not run during conda-build):
+  #   bash tests/test_predict_integration.sh
 
 about:
   home: https://github.com/NameFilled/Euktect

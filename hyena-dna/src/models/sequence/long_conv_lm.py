@@ -118,7 +118,7 @@ def create_mlp_cls(
         mlp_cls = partial(
             Mlp,
             hidden_features=inner_dim,
-            activation=partial(F.gelu, approximate="tanh"),
+            activation=F.gelu,
             **factory_kwargs,
         )
     elif fused_mlp:

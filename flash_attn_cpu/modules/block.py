@@ -30,12 +30,12 @@ class Block(nn.Module):
             mlp_cls = partial(Mlp, hidden_features=4 * dim)
         self.mixer = mixer_cls(dim)
         self.dropout1 = dropout_cls(resid_dropout1)
-        self.drop_path1 = StochasticDepth(drop_path1, mode='row')
+        self.drop_path1 = StochasticDepth(drop_path1)
         self.norm1 = norm_cls(dim)
         self.mlp = mlp_cls(dim)
         if not isinstance(self.mlp, nn.Identity):
             self.dropout2 = dropout_cls(resid_dropout2)
-            self.drop_path2 = StochasticDepth(drop_path2, mode='row')
+            self.drop_path2 = StochasticDepth(drop_path2)
             self.norm2 = norm_cls(dim)
 
     def forward(self, hidden_states, residual=None, mixer_subset=None, mixer_kwargs=None):
