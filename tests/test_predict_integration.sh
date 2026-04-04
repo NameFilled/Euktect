@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 # Integration test: run euktect-predict end-to-end
 # Usage: bash tests/test_predict_integration.sh
-# Requires: external ckpt and fasta files (not included in package)
-# Override defaults with environment variables:
-#   EUKTECT_TEST_INPUT, EUKTECT_TEST_CKPT, EUKTECT_TEST_CFG
+# Requires: ckpt and cfg files at the paths below
 
 set -euo pipefail
 
-INPUT="${EUKTECT_TEST_INPUT:-/media/asky/F/Deepfungi_ana/fement_metagenome/Cocoa/PRJNA527768/contigs/SRR8742576.fna}"
-CKPT="${EUKTECT_TEST_CKPT:-/media/asky/F/Deepfungi_ana/000_paper/code/Euktect/ckpt/Pichiomycetes_class.ckpt}"
-CFG="${EUKTECT_TEST_CFG:-/media/asky/F/Deepfungi_ana/000_paper/code/Euktect/cfg/c/1000.yaml}"
+INPUT="${EUKTECT_TEST_INPUT:-/media/asky/F/Euktect_edit/Euktect/tests/test.fna}"
+CKPT="${EUKTECT_TEST_CKPT:-/media/asky/F/Euktect_edit/Euktect/tests/1000.ckpt}"
+CFG="${EUKTECT_TEST_CFG:-/media/asky/F/Euktect_edit/Euktect/tests/1000.yaml}"
 OUTPUT=$(mktemp /tmp/euktect_test_XXXXXX.csv)
 
 echo "=== euktect-predict integration test ==="
