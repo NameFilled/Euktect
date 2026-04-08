@@ -6,6 +6,22 @@ Euktect is a deep learning model built upon the Hyena-DNA architecture, designed
 
 ## Setup
 
+### Quick Start (Bioconda, CPU-only)
+
+For a quick setup of the CPU-only environment, you can install Euktect via Bioconda:
+
+```bash
+# Create and install the environment
+conda install mamba -n base -c conda-forge
+mamba create -n euktect -c bioconda euktect
+# Activate the environment
+conda activate euktect
+```
+
+In this environment, the `euktect-predict` and `euktect-refine` commands are available to replace `predict.py` and `refine.py`.
+
+### Standard Installation (GPU)
+
 1. **Clone the Repository** (including submodules):
 
    ```bash
@@ -80,6 +96,14 @@ Euktect is a deep learning model built upon the Hyena-DNA architecture, designed
 Before running predictions, download the model checkpoint (`.ckpt`) and configuration file (`.yaml`) from the [Releases](https://github.com/NameFilled/Euktect/releases) page.
 
 ```bash
+# Using the packaged command (Bioconda installation)
+euktect-predict \
+  --input <path_to_fasta_file> \
+  --ckpt <path_to_model_ckpt> \
+  --cfg <path_to_model_cfg> \
+  --output <path_to_report_output>
+
+# OR using the python script directly
 python predict.py \
   --input <path_to_fasta_file> \
   --ckpt <path_to_model_ckpt> \
@@ -143,6 +167,14 @@ To refine eukaryotic metagenome-assembled genomes (MAGs), combine Euktect’s su
 1. **Predict MAG Sequences**:
 
    ```bash
+   # Using the packaged command (Bioconda installation)
+   euktect-predict \
+     --input <path_to_MAG_fasta> \
+     --ckpt <superkingdom_model_ckpt> \
+     --cfg <superkingdom_model_cfg> \
+     --output <path_to_report_output>
+
+   # OR using the python script
    python predict.py \
      --input <path_to_MAG_fasta> \
      --ckpt <superkingdom_model_ckpt> \
@@ -171,6 +203,14 @@ To refine eukaryotic metagenome-assembled genomes (MAGs), combine Euktect’s su
 3. **Run Refinement**:
 
    ```bash
+   # Using the packaged command (Bioconda installation)
+   euktect-refine \
+     --fasta <path_to_MAG_fasta> \
+     --prob_file <path_to_report_output> \
+     --workdir <path_to_workdir> \
+     --eukcc_db <path_to_eukcc_db>
+
+   # OR using the python script
    python refine.py \
      --fasta <path_to_MAG_fasta> \
      --prob_file <path_to_report_output> \
@@ -185,7 +225,7 @@ To refine eukaryotic metagenome-assembled genomes (MAGs), combine Euktect’s su
 
    ```plaintext
    workdir/
-   ├── report/                 # Quality assessment reports
+   ├── report/                 # Q:uality assessment reports
    ├── log/                    # Processing logs
    ├── refined_result/         # Final refined MAG sequences
    ├── refined/                # Intermediate filtered sequences
